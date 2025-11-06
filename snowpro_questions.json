@@ -1,17 +1,17 @@
 [
-  {
-    "qnum": 4,
-    "question": "Manually suspends the warehouse as soon as the last query was completed \nWhen the user returns, how much billable compute time will have been consumed?",
-    "A": "4 minutes",
-    "B": "10 minutes",
-    "C": "14 minutes",
-    "D": "24 minutes",
-    "E": "",
-    "correct": [
-      "B"
-    ],
-    "n_choices": 4
-  },
+  // { // this is actually question 242 but the formatting is all jacked up//
+  //   "qnum": 4,
+  //   "question": "Manually suspends the warehouse as soon as the last query was completed \nWhen the user returns, how much billable compute time will have been consumed?",
+  //   "A": "4 minutes",
+  //   "B": "10 minutes",
+  //   "C": "14 minutes",
+  //   "D": "24 minutes",
+  //   "E": "",
+  //   "correct": [
+  //     "B"
+  //   ],
+  //   "n_choices": 4
+  // },
   {
     "qnum": 10,
     "question": "Topic 1 \n \n \nWhich statement best describes `clustering`?",
