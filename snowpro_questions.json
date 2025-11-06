@@ -1,17 +1,17 @@
 [
-  // { // this is actually question 242 but the formatting is all jacked up//
-  //   "qnum": 4,
-  //   "question": "Manually suspends the warehouse as soon as the last query was completed \nWhen the user returns, how much billable compute time will have been consumed?",
-  //   "A": "4 minutes",
-  //   "B": "10 minutes",
-  //   "C": "14 minutes",
-  //   "D": "24 minutes",
-  //   "E": "",
-  //   "correct": [
-  //     "B"
-  //   ],
-  //   "n_choices": 4
-  // },
+  {
+    "qnum": 242,
+    "question": "A single user of a virtual warehouse has set the warehouse to auto-resume and auto-suspend after 10 minutes. The warehouse is currently suspended and the user performs the following actions: \n\n 1. Runs a query that takes 3 minutes to complete \n 2. Leaves for 15 minute \n 3. Returns and runs a query that takes 10 seconds to complete \n 4.Manually suspends the warehouse as soon as the last query was completed \n\n When the user returns, how much billable compute time will have been consumed?",
+    "A": "4 minutes",
+    "B": "10 minutes",
+    "C": "14 minutes",
+    "D": "24 minutes",
+    "E": "",
+    "correct": [
+      "B"
+    ],
+    "n_choices": 4
+  },
   {
     "qnum": 10,
     "question": "Topic 1 \n \n \nWhich statement best describes `clustering`?",
