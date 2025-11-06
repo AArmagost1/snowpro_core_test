@@ -1,0 +1,363 @@
+qnum,question,A,B,C,D,E,correct,n_choices
+10,Which statement best describes `clustering`?,Clustering represents the way data is grouped together and stored within Snowflake 's micro-partitions,The database administrator must de ne the clustering methodology for each Snowflake table,The clustering key must be included on the COPY command when loading data into Snowflake,Clustering can be disabled within a Snowflake account,,['A'],4
+23,In which layer of its architecture does Snowflake store its metadata statistics?,Storage Layer,Compute Layer,Database Layer,Cloud Services Layer,,['D'],4
+28,Which type of table corresponds to a single Snowflake session?,Temporary,Transient,Provisional,"Permanent
+ .",,['A'],4
+32,Select the three types of tables that exist within Snowflake (Choose three.),Temporary,Transient,Provisional,Permanent,,"['A', 'B', 'D']",4
+37,Which of the following statements are true of Snowflake data loading? (Choose three.),VARIANT null values are not the same as SQL NULL values,"It is recommended to do frequent, single row DMLs",It is recommended to validate the data before loading into the Snowflake target table,"It is recommended to use staging tables to manage MERGE statements
+ ?",,"['A', 'C', 'D']",4
+41,Increasing the maximum number of clusters in a Multi-Cluster Warehouse is an example of:,Scaling rhythmically,Scaling max,Scaling out,Scaling up,,['C'],4
+45,What is the maximum compressed row size in Snowflake ?,8KB,16MB,50MB,4000GB,,['B'],4
+49,Which of the following are common use cases for zero-copy cloning? (Choose three.),Quick provisioning of Dev and Test/QA environments,Data backups,Point in time snapshots,"Performance optimization
+?",,"['A', 'B', 'C']",4
+54,"Query results are stored in the Result Cache for how long after they are last accessed, assuming no data changes have occurred?",1 Hour,3 Hours,12 hours,24 hours,,['D'],4
+58,Which of the following statements is true of zero-copy cloning?,Zero-copy clones increase storage costs as cloning the table requires storing its data twice,All zero-copy clone objects inherit the privileges of their original objects,Zero-copy cloning is licensed as an additional Snowflake feature,"At the instance/instant a clone is created, all micro-partitions in the original table and the clone are fully shared",,['D'],4
+62,Which of the following terms best describes Snowflake 's database architecture?,Columnar shared nothing,Shared disk,"Multi-cluster, shared data",Cloud-native shared memory,,['C'],4
+66,Which of the following objects is not covered by Time Travel?,Tables,Schemas,Databases,Stages,,['D'],4
+71,When can a Virtual Warehouse start running queries?,12am-5am,Only during administrator defined time slots,When its provisioning is complete,"After replication
+.
+ ?",,['C'],4
+85,"When scaling out by adding clusters to a multi-cluster warehouse, you are primarily scaling for improved:",Concurrency,"Performance
+ .
+ ?",,,,['A'],2
+95,What is the minimum Snowflake edition that provides multi-cluster warehouses and up to 90 days of Time Travel?,Standard,Premier,Enterprise,Business Critical Edition,,['C'],4
+100,What is the most granular object that the Time Travel retention period can be defined on?,Account,Database,Schema,"Table
+ ?
+ .
+ fi",,['D'],4
+138,What is the minimum Snowflake edition that has column -level security enabled?,Standard,Enterprise,Business Critical,"Virtual Private Snowflake
+ ?",,['B'],4
+146,Which of the following are characteristics of Snowflake virtual warehouses? (Choose two.),Auto-resume applies only to the last warehouse that was started in a multi-cluster warehouse.,The ability to auto-suspend a warehouse is only available in the Enterprise edition or above.,SnowSQL supports both a configuration file and a command line option for specifying a default warehouse.,A user cannot specify a default warehouse when using the ODBC driver.,The default virtual warehouse size can be changed at any time.,"['C', 'E']",5
+150,What versions of Snowflake should be used to manage compliance with Personal Identifiable Information (PII) requirements? (Choose two.),Custom Edition,Virtual Private Snowflake,Business Critical Edition,Standard Edition,"Enterprise Edition
+ ?
+ ?","['B', 'C']",5
+158,"What is the SNOWFLAKE FL.ACCOUNT_USAGE view that contains information about which objects were read by queries within the last 365 days
+(1 year)?",VIEWS_HISTORY,OBJECT_HISTORY,ACCESS_HISTORY,LOGIN_HISTORY,,['C'],4
+166,How does Snowflake Fail-safe protect data in a permanent table?,"Fail-safe makes data available up to 1 day, recoverable by user operations.","Fail-safe makes data available for 7 days, recoverable by user operations.","Fail-safe makes data available for 7 days, recoverable only by Snowflake Support.","Fail-safe makes data available up to 1 day, recoverable only by Snowflake Support.",,['C'],4
+167,"A virtual warehouse is created using the following command:
+Create warehouse my_WH with
+warehouse_size = MEDIUM
+min_cluster_count = 1
+max_cluster_count = 1
+auto_suspend = 60
+auto_resume = true;
+The image below is a graphical representation of the warehouse utilization across two days.
+What action should be taken to address this situation?",Increase the warehouse size from Medium to 2XL.,Increase the value for the parameter MAX_CONCURRENCY_LEVEL.,Configure the warehouse to a multi-cluster warehouse.,"Lower the value of the parameter STATEMENT_QUEUED_TIMEOUT_IN_SECONDS.
+ ?",,['C'],4
+176,What is the minimum Snowflake edition required to create a materialized view?,Standard Edition,Enterprise Edition,Business Critical Edition,Virtual Private Snowflake Edition,,['B'],4
+182,Which methods can be used to delete staged files from a Snowflake stage? (Choose two.),Use the DROP command after the load completes.,Specify the TEMPORARY option when creating the file format.,Specify the PURGE copy option in the COPY INTO command.,Use the REMOVE command after the load completes.,Use the DELETE LOAD HISTORY command after the load completes.,"['C', 'D']",5
+183,On which of the following cloud platforms can a Snowflake account be hosted? (Choose three.),Amazon Web Services,Private Virtual Cloud,Oracle Cloud,Microsoft Azure Cloud,"Google Cloud Platform
+F. Alibaba Cloud","['A', 'D', 'E']",5
+184,What Snowflake role must be granted for a user to create and manage accounts?,ACCOUNTADMIN,ORGADMIN,SECURITYADMIN,SYSADMIN,,['B'],4
+185,"Assume there is a table consisting of five micro -partitions with values ranging from A to Z.
+Which diagram indicates a well-clustered table?",,,D.,,,['A'],1
+186,What feature can be used to reorganize a very large table on one or more columns?,Micro-partitions,Clustering keys,Key partitions,Clustered partitions,,['B'],4
+187,What is an advantage of using an explain plan instead of the query profiler to evaluate the performance of a query?,The explain plan output is available graphically.,An explain plan can be used to conduct performance analysis without executing a query.,An explain plan will handle queries with temporary tables and the query profiler will not.,An explain plan's output will display automatic data skew optimization information.,,['B'],4
+188,Which data types are supported by Snowflake when using semi-structured data? (Choose two.),VARIANT,VARRAY,STRUCT,ARRAY,QUEUE,"['A', 'D']",5
+189,Why does Snowflake recommend file sizes of 100-250 MB compressed when loading data?,Optimizes the virtual warehouse size and multi-cluster setting to economy mode,Allows a user to import the files in a sequential order,Increases the latency staging and accuracy when loading the data,Allows optimization of parallel operations,,['D'],4
+190,Which of the following features are available with the Snowflake Enterprise edition? (Choose two.),Database replication and failover,Automated index management,Customer managed keys (Tri-secret secure),Extended time travel,Native support for geospatial data,"['D', 'E']",5
+191,What is the default file size when unloading data from Snowflake using the COPY command?,5 MB,8 GB,16 MB,32 MB,,['C'],4
+192,"What features that are part of the Continuous Data Protection (CDP) feature set in Snowflake do not require additional con figuration?
+(Choose two.)",Row level access policies,Data masking policies,Data encryption,Time Travel,External tokenization,"['C', 'D']",5
+193,Which Snowflake layer is always leveraged when accessing a query from the result cache?,Metadata,Data Storage,Compute,Cloud Services,,['D'],4
+194,– Old question - Ignore Which connectors are available in the downloads section of the Snowflake web interface (UI)? (Choose two.),SnowSQL,JDBC,ODBC,HIVE,Scala,"['B', 'C']",5
+195,"A Snowflake Administrator needs to ensure that sensitive corporate data in Snowflake tables is not visible to end users, but is partially
+visible to functional managers.
+How can this requirement be met?",Use data encryption.,Use dynamic data masking.,Use secure materialized views.,Revoke all roles for functional managers and end users.,,['B'],4
+196,Users are responsible for data storage costs until what occurs?,Data expires from Time Travel,Data expires from Fail-safe,Data is deleted from a table,Data is truncated from a table,,['B'],4
+197,"A user has an application that writes a new file to a cloud storage location every 5 minutes.
+What would be the MOST efficient way to get the files into Snowflake ?",Create a task that runs a COPY INTO operation from an external stage every 5 minutes.,Create a task that PUTS the files in an internal stage and automate the data loading wizard.,Create a task that runs a GET operation to intermittently check for new files.,Set up cloud provider notifications on the file location and use Snowpipe with auto-ingest.,,['D'],4
+198,What affects whether the query results cache can be used?,If the query contains a deterministic function,If the virtual warehouse has been suspended,If the referenced data in the table has changed,If multiple users are using the same virtual warehouse,,['C'],4
+199,"Which of the following is an example of an operation that can be completed without requiring compute, assuming no queries hav e been
+executed previously?",SELECT SUM (ORDER_AMT) FROM SALES;,SELECT AVG(ORDER_QTY) FROM SALES;,SELECT MIN(ORDER_AMT) FROM SALES;,SELECT ORDER_AMT * ORDER_QTY FROM SALES;,,['C'],4
+200,How many days is load history for Snowpipe retained?,1 day,7 days,14 days,64 days,,['C'],4
+201,What Snowflake features allow virtual warehouses to handle high concurrency workloads? (Choose two.),The ability to scale up warehouses,The use of warehouse auto scaling,The ability to resize warehouses,Use of multi-clustered warehouses,The use of warehouse indexing,"['B', 'D']",5
+202,Which COPY INTO command outputs the data into one file?,SINGLE=TRUE,MAX_FILE_NUMBER=1,FILE_NUMBER=1,MULTIPLE=FALSE,,['A'],4
+203,In which scenarios would a user have to pay Cloud Services costs? (Choose two.),Compute Credits = 50 Credits Cloud Services = 10,Compute Credits = 80 Credits Cloud Services = 5,Compute Credits = 100 Credits Cloud Services = 9,Compute Credits = 120 Credits Cloud Services = 10,Compute Credits = 200 Credits Cloud Services = 26,"['A', 'E']",5
+204,"A user created a new worksheet within the Snowsight UI and wants to share this with teammates.
+How can this worksheet be shared?",Create a zero-copy clone of the worksheet and grant permissions to teammates.,Create a private Data Exchange so that any teammate can use the worksheet.,Share the worksheet with teammates within Snowsight .,Create a database and grant all permissions to teammates.,,['C'],4
+205,How can a row access policy be applied to a table or a view? (Choose two.),Within the policy DDL,Within the create table or create view DDL,By future APPLY for all objects in a schema,Within a control table,Using the command ALTER [object] ADD ROW ACCESS POLICY [policy];,"['B', 'E']",5
+206,Which command can be used to load data files into a Snowflake stage?,JOIN,COPY INTO,PUT,GET,,['C'],4
+207,What types of data listings are available in the Snowflake Data Marketplace? (Choose two.),Reader,Consumer,Vendor,Standard,Personalized,"['D', 'E']",5
+208,What is the maximum Time Travel retention period for a temporary Snowflake table?,90 days,1 day,7 days,45 days,,['B'],4
+209,When should a multi-cluster warehouse be used in auto-scaling mode?,When it is unknown how much compute power is needed,If the select statement contains a large number of temporary tables or Common Table Expressions (CTEs),If the runtime of the executed query is very slow,When a large number of concurrent queries are run on the same warehouse,,['D'],4
+210,What happens when a cloned table is replicated to a secondary database? (Choose two.),A read-only copy of the cloned tables is stored.,The replication will not be successful.,The physical data is replicated.,Additional costs for storage are charged to a secondary account.,Metadata pointers to cloned tables are replicated.,"['C', 'D']",5
+211,Snowflake supports the use of external stages with which cloud platforms? (Choose three.),Amazon Web Services,Docker,IBM Cloud,Microsoft Azure Cloud,"Google Cloud Platform
+F. Oracle Cloud","['A', 'D', 'E']",5
+212,What is a limitation of a Materialized View?,A Materialized View cannot support any aggregate functions,A Materialized View can only reference up to two tables,A Materialized View cannot be joined with other tables,A Materialized View cannot be defined with a JOIN,,['D'],4
+213,"In the Snowflake access control model, which entity owns an object by default?",The user who created the object,The SYSADMIN role,Ownership depends on the type of object,The role used to create the object,,['D'],4
+214,What is the minimum Snowflake edition required to use Dynamic Data Masking?,Standard,Enterprise,Business Critical,Virtual Private Snowflake,,['B'],4
+215,Which services does the Snowflake Cloud Services layer manage? (Choose two.),Compute resources,Query execution,Authentication,Data storage,Metadata,"['C', 'E']",5
+216,"A company needs to allow some users to see Personally Identifiable Information (PII) while limiting other users from seeing the full
+value of the PII.
+Which Snowflake feature will support this?",Row access policies,Data masking policies,Data encryption,Role based access control,,['B'],4
+217,"A user has unloaded data from a Snowflake table to an external stage.
+Which command can be used to verify if data has been uploaded to the external stage named my_stage?",view @my_stage,list @my_stage,show @my_stage,display @my_stage,,['B'],4
+218,Which tasks are performed in the Snowflake Cloud Services layer? (Choose two.),Management of metadata,Computing the data,Maintaining Availability Zones,Infrastructure security,Parsing and optimizing queries,"['A', 'E']",5
+219,What is true about sharing data in Snowflake ? (Choose two.),The Data Consumer pays for data storage as well as for data computing.,"The shared data is copied into the Data Consumer account, so the Consumer can modify it without impacting the base data of
+the Provider.",A Snowflake account can both provide and consume shared data.,The Provider is charged for compute resources used by the Data Consumer to query the shared data.,The Data Consumer pays only for compute resources to query the shared data.,"['C', 'E']",5
+220,"The following JSON is stored in a VARIANT column called src of the CAR_SALES table:
+A user needs to extract the dealership information from the JSON.
+How can this be accomplished?",select src:dealership from car_sales;,select src.dealership from car_sales;,select src:Dealership from car_sales;,select dealership from car_sales;,,['A'],4
+221,Which of the following significantly improves the performance of selective point lookup queries on a table?,Clustering,Materialized Views,Zero-copy Cloning,Search Optimization Service,,['D'],4
+222,Which of the following accurately describes shares?,"Tables, secure views, and secure UDFs can be shared",Shares can be shared,Data consumers can clone a new table from a share,Access to a share cannot be revoked once granted,,['A'],4
+223,What are best practice recommendations for using the ACCOUNTADMIN system -defined role in Snowflake ? (Choose two.),Ensure all ACCOUNTADMIN roles use Multi-factor Authentication (MFA).,All users granted ACCOUNTADMIN role must be owned by the ACCOUNTADMIN role.,The ACCOUNTADMIN role must be granted to only one user.,"Assign the ACCOUNTADMIN role to at least two users, but as few as possible.",All users granted ACCOUNTADMIN role must also be granted SECURITYADMIN role.,"['A', 'D']",5
+224,"In the query pro filer view for a query, which components represent areas that can be used to help optimize query performance? (Choose
+two.)",Bytes scanned,Bytes sent over the network,Number of partitions scanned,Percentage scanned from cache,External bytes scanned,"['A', 'C']",5
+225,What is the minimum Snowflake edition required for row level security?,Standard,Enterprise,Business Critical,Virtual Private Snowflake,,['B'],4
+226,What is the minimum Fail-safe retention time period for transient tables?,1 day,7 days,12 hours,0 days,,['D'],4
+227,What is a machine learning and data science partner within the Snowflake Partner Ecosystem?,Informatica,Power BI,Adobe,Data Robot,,['D'],4
+228,Which statements are correct concerning the leveraging of third-party data from the Snowflake Data Marketplace? (Choose two.),"Data is live, ready-to-query, and can be personalized.",Data needs to be loaded into a cloud provider as a consumer account.,Data is not available for copying or moving to an individual Snowflake account.,Data is available without copying or moving.,Data transformations are required when combining Data Marketplace datasets with existing data in Snowflake .,"['A', 'D']",5
+229,What impacts the credit consumption of maintaining a materialized view? (Choose two.),Whether or not it is also a secure view,How often the underlying base table is queried,How often the base table changes,Whether the materialized view has a cluster key defined,How often the materialized view is queried,"['C', 'D']",5
+230,What COPY INTO SQL command should be used to unload data into multiple files?,SINGLE=TRUE,MULTIPLE=TRUE,MULTIPLE=FALSE,SINGLE=FALSE,,['D'],4
+231,"When cloning a database containing stored procedures and regular views, that have fully quali fied table references, which of the
+following will occur?",The cloned views and the stored procedures will reference the cloned tables in the cloned database.,"An error will occur, as views with qualified references cannot be cloned.","An error will occur, as stored objects cannot be cloned.",The stored procedures and views will refer to tables in the source database.,,['D'],4
+232,"When loading data into Snowflake , how should the data be organized?",Into single files with 100-250 MB of compressed data per file,Into single files with 1-100 MB of compressed data per file,Into files of maximum size of 1 GB of compressed data per file,Into files of maximum size of 4 GB of compressed data per file,,['A'],4
+233,Which of the following objects can be directly restored using the UNDROP command? (Choose two.),Schema,View,Internal stage,Table,"User
+F. Role","['A', 'D']",5
+234,Which Snowflake SQL statement would be used to determine which users and roles have access to a role called MY_ROLE?,SHOW GRANTS OF ROLE MY_ROLE,SHOW GRANTS TO ROLE MY_ROLE,SHOW GRANTS FOR ROLE MY_ROLE,SHOW GRANTS ON ROLE MY_ROLE,,['A'],4
+235,What is the MINIMUM edition of Snowflake that is required to use a SCIM security integration?,Business Critical Edition,Standard Edition,Virtual Private Snowflake (VPS),Enterprise Edition,,['B'],4
+236,"A user created a transient table and made several changes to it over the course of several days. Three days after the table was created,
+the user would like to go back to the first version of the table.
+How can this be accomplished?","Use Time Travel, as long as DATA_RETENTION_TIME_IN_DAYS was set to at least 3 days.",The transient table version cannot be retrieved after 24 hours.,Contact Snowflake Support to have the data retrieved from Fail-safe storage.,Use the FAIL_SAFE parameter for Time Travel to retrieve the data from Fail-safe storage.,,['B'],4
+237,"When reviewing the load for a warehouse using the load monitoring chart, the chart indicates that a high volume of queries is always
+queuing in the warehouse.
+According to recommended best practice, what should be done to reduce the queue volume? (Choose two.)",Use multi-clustered warehousing to scale out warehouse capacity.,Scale up the warehouse size to allow queries to execute faster.,Stop and start the warehouse to clear the queued queries.,Migrate some queries to a new warehouse to reduce load.,Limit user access to the warehouse so fewer queries are run against it.,"['A', 'B']",5
+238,"Which of the following features, associated with Continuous Data Protection (CDP), require additional Snowflake -provided data
+storage? (Choose two.)",Tri-Secret Secure,Time Travel,Fail-safe,Data encryption,External stages,"['B', 'C']",5
+239,Where can a user find and review the failed logins of a specific user for the past 30 days?,The USERS view in ACCOUNT_USAGE,The LOGIN_HISTORY view in ACCOUNT_USAGE,The ACCESS_HISTORY view in ACCOUNT_USAGE,The SESSIONS view in ACCOUNT_USAGE,,['B'],4
+240,What is the purpose of an External Function?,To call code that executes outside of Snowflake,To run a function in another Snowflake database,To share data in Snowflake with external parties,To ingest data from on-premises data sources,,['A'],4
+241,Which of the following statements apply to Snowflake in terms of security? (Choose two.),Snowflake leverages a Role-Based Access Control (RBAC) model.,Snowflake requires a user to configure an IAM user to connect to the database.,All data in Snowflake is encrypted.,Snowflake can run within a user's own Virtual Private Cloud (VPC).,All data in Snowflake is compressed.,"['A', 'C']",5
+242,"A single user of a virtual warehouse has set the warehouse to auto-resume and auto-suspend after 10 minutes. The warehouse is
+currently suspended and the user performs the following actions:
+1. Runs a query that takes 3 minutes to complete
+2. Leaves for 15 minutes
+3. Returns and runs a query that takes 10 seconds to complete
+4. Manually suspends the warehouse as soon as the last query was completed
+When the user returns, how much billable compute time will have been consumed?",4 minutes,10 minutes,14 minutes,24 minutes,,['C'],4
+243,What can be used to view warehouse usage over time? (Choose two.),The LOAD HISTORY view,The query history view,The SHOW WAREHOUSES command,The WAREHOUSE_METERING_HISTORY view,The billing and usage tab in the Snowflake web UI,"['D', 'E']",5
+244,What actions will prevent leveraging of the ResultSet cache? (Choose two.),Removing a column from the query SELECT list,Stopping the virtual warehouse that the query is running against,Clustering of the data used by the query,Executing the RESULTS_SCAN() table function,Changing a column that is not in the cached query,"['A', 'C']",5
+245,Which statement is true about running tasks in Snowflake ?,A task can be called using a CALL statement to run a set of predefined SQL commands.,A task allows a user to execute a single SQL statement/command using a predefined schedule.,A task allows a user to execute a set of SQL commands on a predefined schedule.,A task can be executed using a SELECT statement to run a predefined SQL command.,,['B'],4
+246,Which data types does Snowflake support when querying semi-structured data? (Choose two.),VARIANT,VARCHAR,XML,ARRAY,BLOB,"['A', 'D']",5
+247,"In an auto-scaling multi-cluster virtual warehouse with the setting SCALING_POLICY = ECONOMY enabled, when is another cluster
+started?",When the system has enough load for 2 minutes,When the system has enough load for 6 minutes,When the system has enough load for 8 minutes,When the system has enough load for 10 minutes,,['B'],4
+248,"What is the following SQL command used for?
+Select * from table(validate(t1, job_id => '_last'));",To validate external table files in table t1 across all sessions,To validate task SQL statements against table t1 in the last 14 days,To validate a file for errors before it gets executed using a COPY command,To return errors from the last executed COPY command into table t1 in the current session,,['D'],4
+249,"A sales table FCT_SALES has 100 million records.
+The following query was executed:
+SELECT COUNT (1) FROM FCT_SALES;
+How did Snowflake fulfill this query?",Query against the result set cache,Query against a virtual warehouse cache,Query against the most-recently created micro-partition,Query against the metadata cache,,['D'],4
+250,What happens when a virtual warehouse is resized?,"When increasing the size of an active warehouse the compute resource for all running and queued queries on the warehouse are
+affected.","When reducing the size of a warehouse the compute resources are removed only when they are no longer being used to execute
+any current statements.","The warehouse will be suspended while the new compute resource is provisioned and will resume automatically once
+provisioning is complete.",Users who are trying to use the warehouse will receive an error message until the resizing is complete.,,['B'],4
+251,What tasks can be completed using the COPY command? (Choose two.),Columns can be aggregated.,Columns can be joined with an existing table.,Columns can be reordered.,Columns can be omitted.,Data can be loaded without the need to spin up a virtual warehouse.,"['C', 'D']",5
+252,Which Snowflake layer can be configured?,Database Storage,Cloud Services,Query Processing,Application Services,,['C'],4
+253,Query compilation occurs in which architecture layer of the Snowflake Cloud Data Platform?,Compute layer,Storage layer,Cloud infrastructure layer,Cloud services layer,,['D'],4
+254,"If a size Small virtual warehouse is made up of two servers, how many servers make up a Large warehouse?",4,8,16,32,,['B'],4
+255,"A clustering key was de fined on a table, but it is no longer needed.
+How can the key be removed?",ALTER TABLE [TABLE NAME] PURGE CLUSTERING KEY,ALTER TABLE [TABLE NAME] DELETE CLUSTERING KEY,ALTER TABLE [TABLE NAME] DROP CLUSTERING KEY,ALTER TABLE [TABLE NAME] REMOVE CLUSTERING KEY,,['C'],4
+256,What is a core benefit of clustering?,To guarantee uniquely identifiable records in the database,To increase scan efficiency in queries by improving pruning,To improve performance by creating a separate file for point lookups,To provide data redundancy by duplicating micro-partitions,,['B'],4
+257,Which statement is true about Multi-Factor Authentication (MFA) in Snowflake ?,MFA can be enforced or applied for a given role.,Snowflake users are automatically enrolled in MFA.,Users enroll in MFA by submitting a request to Snowflake Support.,MFA is an integrated Snowflake feature.,,['D'],4
+258,What data type should be used to store JSON data natively in Snowflake ?,JSON,String,Object,VARIANT,,['D'],4
+259,What should be considered when deciding to use a Secure View? (Choose two.),No details of the query execution plan will be available in the query profiler.,Once created there is no way to determine if a view is secure or not.,Secure views do not take advantage of the same internal optimizations as standard views.,It is not possible to create secure materialized views.,The view definition of a secure view is still visible to users by way of the information schema.,"['A', 'C']",5
+260,The information schema provides storage information for which of the following objects? (Choose two.),Users,Databases,Internal stages,Resource monitors,Pipes,"['B', 'C']",5
+261,What is a responsibility of Snowflake ’s virtual warehouses?,Infrastructure management,Metadata management,Query execution,Query parsing and optimization,Management of the storage layer,['C'],5
+262,Which data type is supported by Snowflake data classification?,Binary,Float,Geography,Variant,,['B'],4
+263,"When unloading data to an external stage, which compression format can be used for Parquet files with the COPY INTO command?",BROTLI,GZIP,LZO,ZSTD,,['C'],4
+264,Which SQL command can be used to verify the privileges that are granted to a role?,SHOW GRANTS ON ROLE,SHOW ROLES,SHOW GRANTS TO ROLE,SHOW GRANTS FOR ROLE,,['C'],4
+265,Which Query Profile result indicates that a warehouse is sized too small?,There are a lot of filter nodes.,Bytes are spilling to external storage.,The number of processed rows is very high.,The number of partitions scanned is the same as partitions total.,,['B'],4
+266,What is the default Time Travel retention period?,1 day,7 days,45 days,90 days,,['A'],4
+270,Which Snowflake partner category is represented at the top of this diagram (labeled 1)?,Business Intelligence,Machine Learning and Data Science,Security and Governance,Data Integration,,['D'],4
+271,Which object types are protected by Fail-safe? (Choose two.),Permanent Tables,Temporary Tables,External Tables,Materialized Views,Transient Tables,"['A', 'D']",5
+272,Snowflake 's approach to the management of system access combines which of the following models? (Choose two.),Security Assertion Markup Language (SAML),Role-Based Access Control (RBAC),Identity Access Management (AM),"Create, Read, Update, and Delete (CRUD)","Discretionary Access Control (DAC)
+F. Mandatory Access Control (MAC)","['B', 'E']",5
+273,"According to Snowflake best practice recommendations, which role should be used to create databases?",ACCOUNTADMIN,SYSADMIN,SECURITYADMIN,USERADMIN,,['B'],4
+274,"To add or remove search optimization for a table, a user must have which of the following privileges or roles? (Choose two.)",The MODIFY privilege on the table,The OWNERSHIP privilege on the table,A SECURITYADMIN role,The ADD SEARCH OPTIMIZATION privilege on the schema that contains the table,The SELECT privilege on the table,"['B', 'D']",5
+275,"While using a COPY command with a Validation_mode parameter, which of the following statements will return an error?",Statements that insert a duplicate record during a load,Statements that have a specific data type in the source,Statements that have duplicate file names,Statements that transform data during a load,,['D'],4
+276,When is the result set cache no longer available? (Choose two.),When another warehouse is used to execute the query,When another user executes the query,When the underlying data has changed,When the warehouse used to execute the query is suspended,When it has been 24 hours since the last query,"['C', 'E']",5
+277,What is the recommended file sizing for data loading using Snowpipe ?,"A compressed file size greater than 100 MB, and up to 250 MB","A compressed file size greater than 100 GB, and up to 250 GB","A compressed file size greater than 10 MB, and up to 100 MB","A compressed file size greater than 1 GB, and up to 2 GB",,['A'],4
+278,Which statements are true concerning Snowflake ’s underlying cloud infrastructure? (Choose three.),Snowflake data and services are deployed in a single availability zone within a cloud provider’s region.,"Snowflake data and services are available in a single cloud provider and a single region; the use of multiple cloud providers is not
+supported.","Snowflake can be deployed in a customer’s private cloud using the customer’s own compute and storage resources for
+Snowflake compute and storage.",Snowflake uses the core compute and storage services of each cloud provider for its own compute and storage.,"All three layers of Snowflake ’s architecture (storage, compute, and cloud services) are deployed and managed entirely on a
+selected cloud platform.
+F. Snowflake data and services are deployed in at least three availability zones within a cloud provider’s region.",,5
+279,"A user unloaded a Snowflake table called mytable to an internal stage called mystage.
+Which command can be used to view the list of files that has been uploaded to the stage?",list @mytable;,list @%mytable;,list @%mystage;,list @mystage;,,['D'],4
+280,What is a best practice after creating a custom role?,Create the custom role using the SYSADMIN role.,Assign the custom role to the SYSADMIN role.,Assign the custom role to the PUBLIC role.,Add _CUSTOM to all custom role names.,,['B'],4
+281,"Which is the MINIMUM required Snowflake edition that a user must have if they want to use AWS/Azure Privatelink or Google Cloud
+Private Service Connect?",Standard,Premium,Enterprise,Business Critical,,['D'],4
+282,Which of the following query profiler variables will indicate that a virtual warehouse is not sized correctly for the query being executed?,Bytes sent over the network,Synchronization,Initialization,Remote spillage,,['D'],4
+283,Which of the following Snowflake capabilities are available in all Snowflake editions? (Choose two.),Customer -managed encryption keys through Tri-Secret Secure,Automatic encryption of all data,Up to 90 days of data recovery through Time Travel,Object -level access control,Column -level security to apply data masking policies to tables and views,"['B', 'D']",5
+284,A PUT command can be used to stage local files from which Snowflake interface?,SnowSQL,Snowflake classic web interface (UI),Snowsight,.NET driver,,['A'],4
+285,Which of the following indicates that it may be appropriate to use a clustering key for a table? (Choose two.),The table contains a column that has very low cardinality.,DML statements that are being issued against the table are blocked.,The table has a small number of micro-partitions.,Queries on the table are running slower than expected.,The clustering depth for the table is large.,"['D', 'E']",5
+286,Which cache type is used to cache data output from SQL queries?,Metadata cache,Result cache,Remote cache,Local file cache,,['B'],4
+287,Which of the following describes how clustering keys work in Snowflake ?,"Clustering keys update the micro-partitions in place with a full sort, and impact the DML operations.","Clustering keys sort the designated columns over time, without blocking DML operations.","Clustering keys create a distributed, parallel data structure of pointers to a table's rows and columns.",Clustering keys establish a hashed key on each node of a virtual warehouse to optimize joins at run-time.,,['B'],4
+288,Which of the following operations require the use of a running virtual warehouse? (Choose two.),Downloading data from an internal stage,Listing files in a stage,Executing a stored procedure,Altering a table,Querying data from a materialized view,"['C', 'E']",5
+289,What is used to limit the credit usage of a virtual warehouse within a Snowflake account?,Load monitor,Resource monitor,Query Profile,Stream,,['B'],4
+290,What are the benefits of the replication feature in Snowflake ? (Choose two.),Disaster recovery,Time Travel,Fail-safe,Database failover and failback,Data security,"['A', 'D']",5
+291,Which of the following roles are recommended to create and manage users and roles? (Choose two.),SYSADMIN,SECURITYADMIN,PUBLIC,ACCOUNTADMIN,USERADMIN,"['B', 'E']",5
+292,When can a newly configured virtual warehouse start running SQL queries?,After 50% of the warehouse provisioning has completed,During the time slots defined by the ACCOUNTADMIN,When the warehouse provisioning is completed,After the warehouse replication is completed,,['C'],4
+293,What actions will prevent leveraging of the ResultSet cache?,Removing a column from the query SELECT list,Stopping the virtual warehouse that the query is running against,If the result has not been reused within the last 12 hours,Executing the RESULTS_SCAN() table function,,['A'],4
+294,Which of the following are benefits of micro-partitioning? (Choose two.),Micro-partitions cannot overlap in their range of values.,Micro-partitions are immutable objects that support the use of Time Travel.,Micro-partitions can reduce the amount of I/O from object storage to virtual warehouses.,Rows are automatically stored in sorted order within micro-partitions.,Micro-partitions can be defined on a schema -by-schema basis.,"['B', 'C']",5
+295,Which data type can be used to store geospatial data in Snowflake ?,Variant,Object,Geometry,Geography,,['C'],4
+296,"If all virtual warehouse resources are maximized while processing a query workload, what will happen to new queries that are
+submitted to the warehouse?",All queries will terminate when the resources are maximized.,The warehouse will scale out automatically,The warehouse will move to a suspended state.,New queries will be queued and executed when capacity is available.,,['D'],4
+297,Masking policies can be applied to which of the following Snowflake objects? (Choose two.),A materialized view,A stored procedure,A table,A stream,"A pipe
+F. A User-Defined Function (UDF)","['A', 'C']",5
+298,What actions are supported by Snowflake resource monitors? (Choose two.),Alert,Notify,Notify and suspend,Abort,Suspend immediately,"['B', 'C']",5
+299,"A user executes the following SQL query:
+create table SALES_BKP like SALES;
+What are the cost implications for processing this query?",Processing costs will be generated based on how long the query takes.,Storage costs will be generated based on the size of the data.,No costs will be incurred as the query will use metadata.,The cost for running the virtual warehouse will be charged by the second.,,['C'],4
+300,What is the maximum length of time travel available in the Snowflake Standard Edition?,1 Day,7 Days,30 Days,90 Days,,['A'],4
+301,What happens when an external or an internal stage is dropped? (Choose two.),"When dropping an external stage, the files are not removed and only the stage is dropped.","When dropping an external stage, both the stage and the files within the stage are removed.","When dropping an internal stage, the files are deleted with the stage and the files are recoverable.","When dropping an internal stage, the files are deleted with the stage and the files are not recoverable.","When dropping an internal stage, only selected files are deleted with the stage and are not recoverable.","['A', 'D']",5
+302,"A user has 10 files in a stage containing new customer data. The ingest operation completes with no errors, using the following
+command:
+COPY INTO my_table FROM @my_stage;
+The next day the user adds 10 files to the stage so that now the stage contains a mixture of new customer data and updates to the
+previous data. The user did not remove the 10 original files.
+If the user runs the same COPY INTO command what will happen?",All data from all of the files on the stage will be appended to the table.,Only data about new customers from the new files will be appended to the table.,The operation will fail with the error UNCERTAIN FILES IN STAGE.,All data from only the newly-added files will be appended to the table.,,['D'],4
+303,Which parameter can be used to instruct a COPY command to verify data files instead of loading them into a specified table?,STRIP_NULL_VALUES,SKIP_BYTE_ORDER_MARK,REPLACE_INVALID_CHARACTERS,VALIDATION_MODE,,['D'],4
+304,Which of the following SQL statements will list the version of the drivers currently being used?,Execute SELECT CURRENT_ODBC_CLIENT(); from the Web UI,Execute SELECT CURRENT_JDBC_VERSION(); from SnowSQL,Execute SELECT CURRENT_CLIENT(); from an application,Execute SELECT CURRENT_VERSION(); from the Python Connector,,['C'],4
+305,Which Snowflake technique can be used to improve the performance of a query?,Clustering,Indexing,Fragmenting,Using INDEX_HINTS,,['A'],4
+306,"What happens to the shared objects for users in a consumer account from a share, once a database has been created in that account?",The shared objects are transferred.,The shared objects are copied.,The shared objects become accessible.,The shared objects can be re-shared.,,['C'],4
+307,Using variables in Snowflake is denoted by using which SQL character?,@,&,$,#,,['C'],4
+308,"Which commands should be used to grant the privilege allowing a role to select data from all current tables and any tables th at will be
+created later in a schema? (Choose two.)",grant USAGE on all tables in schema DB1.SCHEMA to role MYROLE;,grant USAGE on future tables in schema DB1.SCHEMA to role MYROLE;,grant SELECT on all tables in schema DB1.SCHEMA to role MYROLE;,grant SELECT on future tables in schema DB1.SCHEMA to role MYROLE;,"grant SELECT on all tables in database DB1 to role MYROLE;
+F. grant SELECT on future tables in database DB1 to role MYROLE;","['C', 'D']",5
+309,How can a user change which columns are referenced in a view?,Modify the columns in the underlying table,Use the ALTER VIEW command to update the view,Recreate the view with the required changes,Materialize the view to perform the changes,,['C'],4
+310,Which statement describes pruning?,The filtering or disregarding of micro-partitions that are not needed to return a query.,The return of micro-partitions values that overlap with each other to reduce a query's runtime.,A service that is handled by the Snowflake Cloud Services layer to optimize caching.,The ability to allow the result of a query to be accessed as if it were a table.,,['A'],4
+311,Which SQL command can be used to see the CREATE definition of a masking policy?,SHOW MASKING POLICIES,DESCRIBE MASKING POLICY,GET_DDL,LIST MASKING POLICIES,,['C'],4
+312,Which of the following is the Snowflake Account_Usage.Metering_History view used for?,Gathering the hourly credit usage for an account,Compiling an account's average cloud services cost over the previous month,Summarizing the throughput of Snowpipe costs for an account,Calculating the funds left on an account's contract,,['A'],4
+313,Query parsing and compilation occurs in which architecture layer of the Snowflake Cloud Data Platform?,Cloud services layer,Compute layer,Storage layer,Cloud agnostic layer,,['A'],4
+314,Which of the following Snowflake objects can be shared using a secure share? (Choose two.),Materialized views,Sequences,Procedures,Tables,Secure User Defined Functions (UDFs),"['D', 'E']",5
+315,What happens to the underlying table data when a CLUSTER BY clause is added to a Snowflake table?,Data is hashed by the cluster key to facilitate fast searches for common data values,Larger micro-partitions are created for common data values to reduce the number of partitions that must be scanned,Smaller micro-partitions are created for common data values to allow for more parallelism,Data may be co-located by the cluster key within the micro-partitions to improve pruning performance,,['D'],4
+316,Which of the following conditions must be met in order to return results from the results cache? (Choose two.),The user has the appropriate privileges on the objects associated with the query.,Micro-partitions have been reclustered since the query was last run.,The new query is run using the same virtual warehouse as the previous query.,The query includes a User Defined Function (UDF).,The query has been run within 24 hours of the previously run query.,"['A', 'E']",5
+317,Which statement about billing applies to Snowflake credits?,Credits are billed per-minute with a 60-minute minimum.,Credits are used to pay for cloud data storage usage.,Credits are consumed based on the number of credits billed for each hour that a warehouse runs.,Credits are consumed based on the warehouse size and the time the warehouse is running.,,['D'],4
+318,A user needs to create a materialized view in the schema MYDB.MYSCHEM,"GRANT ROLE MYROLE TO USER USER1;
+CREATE MATERIALIZED VIEW ON SCHEMA MYDB.MYSCHEMA TO ROLE MYROLE;","GRANT ROLE MYROLE TO USER USER1;
+CREATE MATERIALIZED VIEW ON SCHEMA MYDB.MYSCHEMA TO USER USER1;","GRANT ROLE MYROLE TO USER USER1;
+CREATE MATERIALIZED VIEW ON SCHEMA MYDB.MYSCHEMA TO USER1;","GRANT ROLE MYROLE TO USER USER1;
+CREATE MATERIALIZED VIEW ON SCHEMA MYDB.MYSCHEMA TO MYROLE;",,['A'],4
+319,What is the purpose of multi-cluster virtual warehouses?,To create separate data warehouses to increase query optimization,To allow users the ability to choose the type of compute nodes that make up a virtual warehouse cluster,To eliminate or reduce queuing of concurrent queries,To allow the warehouse to resize automatically,,['C'],4
+320,Which of the following is a valid source for an external stage when the Snowflake account is located on Microsoft Azure?,An FTP server with TLS encryption,An HTTPS server with WebDAV,A Google Cloud storage bucket,A Windows server file share on Azure,,['C'],4
+321,Which database objects can be shared with the Snowflake secure data sharing feature? (Choose two.),Files,External tables,Secure User-Defined Functions (UDFs),Sequences,Streams,"['B', 'C']",5
+322,Which statements reflect key functionalities of a Snowflake Data Exchange? (Choose two.),"If an account is enrolled with a Data Exchange, it will lose its access to the Snowflake Marketplace.",A Data Exchange allows groups of accounts to share data privately among the accounts.,"A Data Exchange allows accounts to share data with third, non-Snowflake parties.",Data Exchange functionality is available by default in accounts using the Enterprise edition or higher.,"The sharing of data in a Data Exchange is bidirectional. An account can be a provider for some datasets and a consumer for
+others.","['B', 'E']",5
+323,"A Snowflake user executed a query and received the results. Another user executed the same query 4 hours later. The data had not
+changed.
+What will occur?","No virtual warehouse will be used, data will be read from the result cache.","No virtual warehouse will be used, data will be read from the local disk cache.",The default virtual warehouse will be used to read all data.,The virtual warehouse that is defined at the session level will be used to read all data.,,['A'],4
+324,Which feature allows a user the ability to control the organization of data in a micro-partition?,Range Partitioning,Search Optimization Service,Automatic Clustering,Horizontal Partitioning,,['C'],4
+325,Which privilege must be granted to a share to allow secure views the ability to reference data in multiple databases?,CREATE_SHARE on the account,SHARE on databases and schemas,SELECT on tables used by the secure view,REFERENCE_USAGE on databases,,['D'],4
+326,In which use case does Snowflake apply egress charges?,Data sharing within a specific region,Query result retrieval,Database replication,Loading data into Snowflake,,['C'],4
+327,Which of the following compute resources or features are managed by Snowflake ? (Choose two.),Execute a COPY command,Updating data,Snowpipe,AUTOMATIC_CLUSTERING,Scaling up a warehouse,"['C', 'D']",5
+328,A materialized view should be created when which of the following occurs? (Choose two.),There is minimal cost associated with running the query.,The query consumes many compute resources every time it runs.,The base table gets updated frequently.,The query is highly optimized and does not consume many compute resources.,The results of the query do not change often and are used frequently.,"['B', 'E']",5
+329,What privilege should a user be granted to change permissions for new objects in a managed access schema?,Grant the OWNERSHIP privilege on the schema.,Grant the OWNERSHIP privilege on the database.,Grant the MANAGE GRANTS global privilege.,Grant ALL privileges on the schema.,,['A'],4
+330,What happens when a Data Provider revokes privileges to a share on an object in their source database?,The object immediately becomes unavailable for all Data Consumers.,Any additional data arriving after this point in time will not be visible to Data Consumers.,The Data Consumers stop seeing data updates and become responsible for storage charges for the object.,A static copy of the object at the time the privilege was revoked is created in the Data Consumers account.,,['A'],4
+331,Which command can be used to load data into an internal stage?,LOAD,COPY,GET,PUT,,['D'],4
+332,What is the MINIMUM Snowflake edition required to use the periodic rekeying of micro-partitions?,Enterprise,Business Critical,Standard,Virtual Private Snowflake,,['A'],4
+333,Which stage type can be altered and dropped?,Database stage,External stage,Table stage,User stage,,['B'],4
+334,Which Snowflake object enables loading data from files as soon as they are available in a cloud storage location?,Pipe,External stage,Task,Stream,,['A'],4
+335,"A user is loading JSON documents composed of a huge array containing multiple records into Snowflake . The user enables the
+STRIP_OUTER_ARRAY file format option.
+What does the STRIP_OUTER_ARRAY file format do?",It removes the last element of the outer array.,It removes the outer array structure and loads the records into separate table rows.,It removes the trailing spaces in the last element of the outer array and loads the records into separate table columns.,It removes the NULL elements from the JSON object eliminating invalid data and enables the ability to load the records.,,['B'],4
+336,Which of the following describes how multiple Snowflake accounts in a single organization relate to various cloud providers?,Each Snowflake account can be hosted in a different cloud vendor and region.,Each Snowflake account must be hosted in a different cloud vendor and region.,All Snowflake accounts must be hosted in the same cloud vendor and region.,Each Snowflake account can be hosted in a different cloud vendor but must be in the same region.,,['A'],4
+337,"If a Snowflake user decides a table should be clustered, what should be used as the cluster key?",The columns that are queried in the select clause.,The columns with very high cardinality.,The columns with many different values.,The columns most actively used in the select filters.,,['D'],4
+338,What are value types that a VARIANT column can store? (Choose two.),STRUCT,OBJECT,BINARY,ARRAY,CLOB,"['B', 'D']",5
+339,"A company needs to read multiple terabytes of data for an initial load as part of a Snowflake migration. The company can control the
+number and size of CSV extract files.
+How does Snowflake recommend maximizing the load performance?",Use auto-ingest Snowpipe s to load large files in a serverless model.,"Produce the largest files possible, reducing the overall number of files to process.",Produce a larger number of smaller files and process the ingestion with size Small virtual warehouses.,Use an external tool to issue batched row-by-row inserts within BEGIN TRANSACTION and COMMIT commands.,,['C'],4
+340,"For non-materialized views, what column in Information Schema and Account Usage identifes whether a view is secure or not?",CHECK_OPTION,IS_SECURE,IS_UPDATEABLE,TABLE_NAME,,['B'],4
+341,The bulk data load history that is available upon completion of the COPY statement is stored where and for how long?,In the metadata of the target table for 14 days,In the metadata of the pipe for 14 days,In the metadata of the target table for 64 days,In the metadata of the pipe for 64 days,,['C'],4
+342,"User INQUISITIVE_PERSON has been granted the role DATA_SCIENCE. The role DATA_SCIENCE has privileges OWNERSHIP on the
+schema MARKETING of the database ANALYTICS_DW.
+Which command will show all privileges granted to that schema?",SHOW GRANTS ON ROLE DATA_SCIENCE,SHOW GRANTS ON SCHEMA ANALYTICS_DW.MARKETING,SHOW GRANTS TO USER INQUISITIVE_PERSON,SHOW GRANTS OF ROLE DATA_SCIENCE,,['B'],4
+343,Which of the following are characteristics of security in Snowflake ?,Account and user authentication is only available with the Snowflake Business Critical edition.,Support for HIPAA and GDPR compliance is available for UI Snowflake editions.,Periodic rekeying of encrypted data is available with the Snowflake Enterprise edition and higher,Private communication to internal stages is allowed in the Snowflake Enterprise edition and higher.,,['C'],4
+344,Which of the following objects can be shared through secure data sharing?,Masking policy,Stored procedure,Task,External table,,['D'],4
+345,Which formats does Snowflake store unstructured data in? (Choose two.),GeoJSON,Array,XML,Object,BLOB,"['B', 'D']",5
+346,"A user is preparing to load data from an external stage.
+Which practice will provide the MOST efficient loading performance?",Organize files into logical paths,Store the files on the external stage to ensure caching is maintained,Use pattern matching for regular expression execution,Load the data in one large file,,['A'],4
+347,"What effect does WAIT_FOR_COMPLETION = TRUE have when running an ALTER WAREHOUSE command and changing the warehouse
+size?",The warehouse size does not change until all queries currently running in the warehouse have completed.,The warehouse size does not change until all queries currently in the warehouse queue have completed.,The warehouse size does not change until the warehouse is suspended and restarted.,It does not return from the command until the warehouse has finished changing its size.,,['D'],4
+348,Which of the following can be used when unloading data from Snowflake ? (Choose two.),"When unloading semi-structured data, it is recommended that the STRIP_OUTER_ARRAY option be used.",Use the ENCODING file format option to change the encoding from the default UTF-8.,The OBJECT_CONSTRUCT function can be used to convert relational data to semi-structured data.,"By using the SINGLE = TRUE parameter, a single file up to 5 GB in size can be exported to the storage layer.",Use the PARSE_JSON function to ensure structured data will be unloaded into the VARIANT data type.,"['C', 'D']",5
+349,What data is stored in the Snowflake storage layer? (Choose two.),Snowflake parameters,Micro-partitions,Query history,Persisted query results,Standard and secure view results,"['B', 'C']",5
+350,"A data provider wants to share data with a consumer who does not have a Snowflake account. The provider creates a reader account
+for the consumer following these steps:
+1. Created a user called ""CONSUMER""
+2. Created a database to hold the share and an extra-small warehouse to query the data
+3. Granted the role PUBLIC the following privileges: Usage on the warehouse, database, and schema, and SELECT on all the objects in
+the share
+Based on this configuration what is true of the reader account?",The reader account will automatically use the Standard edition of Snowflake .,The reader account compute will be billed to the provider account.,"The reader account can clone data the provider has shared, but cannot re-share it.",The reader account can create a copy of the shared data using CREATE TABLE AS...,,['B'],4
+351,Which of the following activities consume virtual warehouse credits in the Snowflake environment? (Choose two.),Caching query results,Running EXPLAIN and SHOW commands,Cloning a database,Running a custom query,Running COPY commands,"['D', 'E']",5
+352,"When loading data into Snowflake , the COPY command supports which of the following?",Joins,Filters,Column reordering,Aggregates,,['C'],4
+353,What is cached during a query on a virtual warehouse?,All columns in a micro-partition,Any columns accessed during the query,The columns in the result set of the query,All rows accessed during the query,,,4
+354,What is the default character set used when loading CSV files into Snowflake ?,UTF-8,UTF-16,ISO 8859-1,ANSI_X3.4,,['A'],4
+355,Which of the following describes external functions in Snowflake ?,They are a type of User-defined Function (UDF).,They contain their own SQL code.,They call code that is stored inside of Snowflake .,They can return multiple rows for each row received.,,['A'],4
+356,Which of the following are valid methods for authenticating users for access into Snowflake ? (Choose three.),SCIM,Federated authentication,TLS 1.2,Key-pair authentication,"OAuth
+F. OCSP authentication","['B', 'D', 'E']",5
+357,"A user has a standard multi -cluster warehouse auto -scaling policy in place.
+Which condition will trigger a cluster to shut-down?",When after 2-3 consecutive checks the system determines that the load on the most-loaded cluster could be redistributed.,When after 5-6 consecutive checks the system determines that the load on the most-loaded cluster could be redistributed.,When after 5-6 consecutive checks the system determines that the load on the least-loaded cluster could be redistributed.,When after 2-3 consecutive checks the system determines that the load on the least-loaded cluster could be redistributed.,,['D'],4
+358,"What is the minimum Snowflake edition needed for database failover and fail-back between Snowflake accounts for business continuity
+and disaster recovery?",Standard,Enterprise,Business Critical,Virtual Private Snowflake,,['C'],4
+359,How would a user execute a series of SQL statements using a task?,"Include the SQL statements in the body of the task CREATE TASK mytask .. AS INSERT INTO target1 SELECT .. FROM stream_s1
+WHERE .. INSERT INTO target2 SELECT .. FROM stream_s1 WHERE ..","A stored procedure can have only one DML statement per stored procedure invocation and therefore the user should sequence
+stored procedure calls in the task de finition CREATE TASK mytask .. AS call stored_proc1(); call stored_proc2();","Use a stored procedure executing multiple SQL statements and invoke the stored procedure from the task. CREATE TASK mytask
+. ... AS call stored_proc_multiple_statements_inside();","Create a task for each SQL statement (e.g. resulting in task1, task2, etc.) and string the series of SQL statements by having a
+control task calling task1, task2, etc. sequentially.",,['C'],4
+360,How many resource monitors can be assigned at the account level?,1,2,3,4,,['A'],4
+361,Data storage for individual tables can be monitored using which commands and/or objects? (Choose two.),SHOW STORAGE BY TABLE;,SHOW TABLES;,Information Schema -> TABLE_HISTORY,Information Schema -> TABLE_FUNCTION,Information Schema -> TABLE_STORAGE_METRICS,"['B', 'E']",5
+362,How would a user run a multi-cluster warehouse in maximized mode?,"Configure the maximum clusters setting to ""Maximum.""",Turn on the additional clusters manually after starting the warehouse.,Set the minimum Clusters and maximum Clusters settings to the same value.,Set the minimum clusters and maximum clusters settings to different values.,,['C'],4
+363,What internal stages are available in Snowflake ? (Choose three.),Schema stage,Named stage,User stage,Stream stage,"Table stage
+F. Database stage","['B', 'C', 'E']",5
+364,Which stages are used with the Snowflake PUT command to upload files from a local file system? (Choose three.),Schema Stage,User Stage,Database Stage,Table Stage,"External Named Stage
+F. Internal Named Stage",,5
+365,Which data type can store more than one type of data structure?,JSON,BINARY,VARCHAR,VARIANT,,['D'],4
+366,User-level network policies can be created by which of the following roles? (Choose two.),ROLEADMIN,ACCOUNTADMIN,SYSADMIN,SECURITYADNIN,USERADMIN,"['B', 'D']",5
+367,What SQL command would be used to view all roles that were granted to USER1?,show grants to user USER1;,show grants user USER1;,describe user USER1;,show grants on user USER1;,,['A'],4
+368,Which ACCOUNT_USAGE views are used to evaluate the details of dynamic data masking? (Choose two.),ROLES,POLICY_REFERENCES,QUERY_HISTORY,RESOURCE_MONITORS,"ACCESS_HISTORY
+F. MASKING_POLICIES",,5
+369,Which of the following are considerations when using a directory table when working with unstructured data? (Choose two.),A directory table is a separate database object.,Directory tables store data file metadata.,A directory table will be automatically added to a stage.,Directory tables do not have their own grantable privileges.,Directory table data cannot be refreshed manually.,"['B', 'D']",5
+370,"The first user assigned to a new account, ACCOUNTADMIN, should create at least one additional user with which administrative
+privilege?",USERADMIN,PUBLIC,ORGADMIN,SYSADMIN,,['A'],4
+371,Which statement describes how Snowflake supports reader accounts?,A reader account can consume data from the provider account that created it and combine it with its own data.,A consumer needs to become a licensed Snowflake customer as data sharing is only supported between Snowflake accounts.,The users in a reader account can query data that has been shared with the reader account and can perform DML tasks.,The SHOW MANAGED ACCOUNTS command will view all the reader accounts that have been created for an account.,,['D'],4
+372,"How does Snowflake allow a data provider with an Azure account in central Canada to share data with a data consumer on AWS in
+Australia?","The data provider in Azure Central Canada can create a direct share to AWS Asia Paci fic, if they are both in the same
+organization.","The data consumer and data provider can form a Data Exchange within the same organization to create a share from Azure
+Central Canada to AWS Asia Pacific.","The data provider uses the GET DATA work ow in the Snowflake Data Marketplace to create a share between Azure Central
+Canada and AWS Asia Pacific.","The data provider must replicate the database to a secondary account in AWS Asia Paci fic within the same organization then
+create a share to the data consumer's account",,['D'],4
+373,Which Snowflake objects can be shared with other Snowflake accounts? (Choose three.),Schemas,Roles,Secure Views,Stored Procedures,"Tables
+F. Secure User-Defined Functions (UDFs)",,5
+374,"Which Snowflake feature will allow small volumes of data to continuously load into Snowflake and will incrementally m ake the data
+available for analysis?",COPY INTO,CREATE PIPE,INSERT INTO,TABLE STREAM,,['B'],4
+375,Which Snowflake partner specializes in data catalog solutions?,Alation,DataRobot,dbt,Tableau,,['A'],4
+376,Which of the following can be executed/called with Snowpipe ?,A User Defined Function (UDF),A stored procedure,A single COPY_INTO statement,A single INSERT_INTO statement,,['C'],4
+377,Which Snowflake objects will incur both storage and cloud compute charges? (Choose two.),Materialized view,Sequence,Secure view,Transient table,Clustered table,"['A', 'E']",5
+378,What file formats does Snowflake support for loading semi-structured data? (Choose three.),TSV,JSON,PDF,Avro,"Parquet
+F. JPEG","['B', 'D', 'E']",5
+379,Which of the following statements about data sharing are true? (Choose two.),New objects created by a Data Provider are automatically shared with existing Data Consumers and Reader Accounts.,All database objects can be included in a shared database.,Reader Accounts are created by Data Providers.,Shared databases are read-only.,Reader Accounts are charged for warehouse usage.,"['C', 'D']",5
+380,Credit charges for Snowflake virtual warehouses are calculated based on which of the following considerations? (Choose two.),The number of queries executed,The number of active users assigned to the warehouse,The size of the virtual warehouse,The length of time the warehouse is running,The duration of the queries that are executed,"['C', 'D']",5
+381,Which of the following are handled by the cloud services layer of the Snowflake architecture? (Choose two.),Query execution,Data loading,Time Travel data,Security,Authentication and access control,"['D', 'E']",5
+382,What is a responsibility of Snowflake ’s virtual warehouses?,Infrastructure management,Metadata management,Query execution,Query parsing and optimization,Permanent storage of micro-partitions,['C'],5
+383,What features does Snowflake Time Travel enable?,Querying data-related objects that were created within the past 365 days,Restoring data-related objects that have been deleted within the past 90 days,Conducting point-in-time analysis for BI reporting,Analyzing data usage/manipulation over all periods of time,,['B'],4
+384,Which of the following statements describes a schema in Snowflake ?,A logical grouping of objects that belongs to a single database,A logical grouping of objects that belongs to multiple databases,A named Snowflake object that includes all the information required to share a database,A uniquely identified Snowflake account within a business entity,,['A'],4
+385,What is the recommended compressed file size range for continuous data loads using Snowpipe ?,8-16 MB,16-24 MB,10-99 MB,100-250 MB,,['D'],4
+386,How long is Snowpipe data load history retained?,As configured in the CREATE PIPE settings,Until the pipe is dropped,64 days,14 days,,['D'],4
+387,"A company strongly encourages all Snowflake users to self-enroll in Snowflake 's default Multi-Factor Authentication (MFA) service to
+provide increased login security for users connecting to Snowflake .
+Which application will the Snowflake users need to install on their devices in order to connect with MFA?",Okta Verify,Duo Mobile,Microsoft Authenticator,Google Authenticator,,['B'],4
+388,Which URL type allows users to access unstructured data without authenticating into Snowflake or passing an authorization token?,Pre-signed URL,Scoped URL,Signed URL,File URL,,['A'],4
+389,Where would a Snowflake user find information about query activity from 90 days ago?,account_ usage.query_history view,account_usage.query_history_archive view,information_schema.query_history view,information_schema.query_history_by_session view,,['A'],4
+390,"A marketing co -worker has requested the ability to change a warehouse size on their medium virtual warehouse called MKTG_WH.
+Which of the following statements will accommodate this request?",ALLOW RESIZE ON WAREHOUSE MKTG_WH TO USER MKTG_LEAD;,GRANT MODIFY ON WAREHOUSE MKTG_WH TO ROLE MARKETING;,GRANT MODIFY ON WAREHOUSE MKTG_WH TO USER MKTG_LEAD;,GRANT OPERATE ON WAREHOUSE MKTG_WH TO ROLE MARKET;,,['B'],4
+391,Which of the following commands cannot be used within a reader account?,CREATE SHARE,ALTER WAREHOUSE,DROP ROLE,SHOW SCHEMAS,DESCRIBE TABLE,['A'],5
+392,Which TABLE function helps to convert semi-structured data to a relational representation?,CHECK_JSON,TO_JSON,FLATTEN,PARSE_JSON,,['C'],4
+393,Which query profile statistics help determine if efficient pruning is occurring? (Choose two.),Bytes sent over network,Percentage scanned from cache,Partitions total,Bytes spilled to local storage,Partitions scanned,"['C', 'E']",5
+394,What are the default Time Travel and Fail-safe retention periods for transient tables?,"Time Travel - 1 day, Fail-safe - 1 day","Time Travel - 0 days, Fail-safe - 1 day","Time Travel - 1 day, Failsafe - 0 days",Transient tables are retained in neither Fail-safe nor Time Travel.,,['C'],4
+395,Which command is used to unload data from a Snowflake table into a file in a stage?,COPY INTO,GET,WRITE,EXTRACT INTO,,['A'],4
+396,What are advantages clones have over tables created with CREATE TABLE AS SELECT statement? (Choose two.),The clone always stays in sync with the original table.,The clone has better query performance.,The clone is created almost instantly.,The clone will have time travel history from the original table.,The clone saves space by not duplicating storage.,"['C', 'E']",5
+397,How often are the Account and Table master keys automatically rotated by Snowflake ?,30 Days,60 Days,90 Days,365 Days.,,['A'],4
+398,Which privilege is required for a role to be able to resume a suspended warehouse if auto-resume is not enabled?,USAGE,OPERATE,MONITOR,MODIFY,,['B'],4
+399,Which statement MOST accurately describes clustering in Snowflake ?,The database ACCOUNTADMIN must define the clustering methodology for each Snowflake table.,Clustering is the way data is grouped together and stored within Snowflake micro-partitions.,The clustering key must be included in the COPY command when loading data into Snowflake .,Clustering can be disabled within a Snowflake account.,,['B'],4
+400,Which of the following practices are recommended when creating a user in Snowflake ? (Choose two.),Configure the user to be initially disabled.,Force an immediate password change.,Set a default role for the user.,Set the number of minutes to unlock to 15 minutes.,Set the user's access to expire within a specified timeframe.,"['B', 'C']",5
+401,Network policies can be applied to which of the following Snowflake objects? (Choose two.),Roles,Databases,Warehouses,Users,Accounts,"['D', 'E']",5
